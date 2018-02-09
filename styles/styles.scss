@@ -1,2 +1,30 @@
 @import "partials/normalize";
-@import "partials/variables"
+@import "partials/variables";
+
+// basic styles
+body {
+    height: 100vh;
+}
+
+.wrapper {
+    max-width: 950px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+div.background {
+    min-height:90vh; 
+    min-width:100%;
+    // border: 2px solid fuchsia;
+    // background: black;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+.button-random, .button-manual {
+    background: rgb(133, 231, 133);
+    color: white;
+}
