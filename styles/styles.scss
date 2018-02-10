@@ -3,28 +3,78 @@
 
 // basic styles
 body {
-    height: 100vh;
+    height: 50%;
+    font-family: 'Lato', sans-serif;
+    background: white;
 }
 
 .wrapper {
-    max-width: 950px;
+    max-width: 1080px;
     width: 90%;
     margin: 0 auto;
 }
 
-div.background {
-    min-height:90vh; 
-    min-width:100%;
-    // border: 2px solid fuchsia;
-    // background: black;
+span.app-title {
+    font-size: 20px;
 }
 
-form {
+p.app-description {
+    color: black;
+    text-align: center;
+    width: 48.5%;
+    align-content: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    line-height: 25px;
+}
+
+div.background {
+    min-height: 60vh; 
+    min-width: 100%;
+    border-radius: 5px;
+}
+
+.section-menu {
+    text-align: center;
     display: flex;
     justify-content: center;
+    margin-top: 30px;
+} 
+
+// buttons
+.button-random, .button-manual, .button-pair {
+    background: none;
+    color:black;
+    width: 150px;
+    padding: 15px;
+    border: 1px solid $accentColor;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-bottom: 3px solid $accentColor;
 }
 
-.button-random, .button-manual {
-    background: rgb(133, 231, 133);
-    color: white;
+input.button-manual:hover  {
+    border: 1px solid $dark;
+    border-bottom: 3px solid $dark;
 }
+
+input.button-random:hover  {
+    border: 1px solid $dark;
+    border-bottom: 3px solid $dark;
+}
+
+input.button-pair {
+    width: 250px;
+    margin-top: 30px;
+}
+
+// .drop-down-menu {
+//     width: 200px;
+//     appearance: none;
+// }
+
+.button-random, .drop-down-menu {
+    margin-right: 10px;
+}
+
+
