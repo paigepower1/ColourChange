@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
-    <title>Project3-webApp</title>
+    <title>MyWebApp</title>
 </head>
 <body>
     <!-- drop down menu -->
@@ -18,19 +18,27 @@
         </p>
     </header>
     <main>
+        <!-- <form>
+            <select class="drop-down-menu">
+                <option value="background colour">Background Colour</option>
+                <option value="title colour">Title Colour</option>
+                <option value="paragraph colour">Paragraph Colour</option>
+                <option value="icon colour">Icon Colour</option>
+                <option value="button colour">Button Colour</option>
+            </select>
+        </form> -->
         <section class="section-menu">
-            <!-- <form>
-                <select class="drop-down-menu">
-                    <option value="background colour">Background Colour</option>
-                    <option value="title colour">Title Colour</option>
-                    <option value="paragraph colour">Paragraph Colour</option>
-                    <option value="icon colour">Icon Colour</option>
-                    <option value="button colour">Button Colour</option>
-                </select>
-            </form> -->
             <div class="user-submit-buttons">
-                <input class="button-random" type="submit" value="Random">
-                <input class="button-manual" type="submit" value="Manual">
+                    <!-- white space between inputs -->
+                    <!-- <form> -->
+                        <button class="button-random">Random</button>
+                        <button class="button-manual">Manual</button>
+                    <!-- best practice to keep have inputs in a form -->
+                    <form>
+                        <!-- I put inputs beside each other because there is a white space between them in the browser and the fix is to have the inputs on the same line -->
+                        <input id="h1-color" type="text" placeholder="Enter hex code for header" value=""><input id="paragraph-color" type="text" placeholder="Enter hex code for text" value=""><input id="button-color" type="text" placeholder="Enter hex code for header" value=""><input id="icon-color" type="text" placeholder="Enter hex code for header" value="">
+                        <button class="submit">Submit</button>
+                    </form>
             </div>
         </section>
         <!-- background -->

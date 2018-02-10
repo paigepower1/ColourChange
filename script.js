@@ -21,6 +21,7 @@
 // global scope
 // empty object {}
 // main container
+// 
 const myApp = {};
 
 // do not need to preface with const 
@@ -28,35 +29,35 @@ const myApp = {};
 myApp.elements = [
     { 
         tag: 'h1',
-        classes: [],
+        classes: ['h1Color'],
         locked: false,
-        colour: '',
+        color: '',
         content: 'title',
-        colourType: ['color']
+        colorType: ['color']
     },
-    {
+   {
         tag: 'p',
         classes: [],
         locked: false,
-        colour: '',
+        color: '',
         content: 'lorem ipsum',
-        colourType: ['color']
+        colorType: ['color']
     },
     {
         tag: 'button',
         classes: [],
         locked: false,
-        colour: '',
+        color: '',
         content: 'button',
-        colourType: ['color', 'background']
+        colorType: ['color', 'background']
     },
     {
         tag: 'i',
         classes: ['fas', 'fa-bars'],
         locked: false,
-        colour: '',
+        color: '',
         content: '',
-        colourType: ['color', 'background']
+        colorType: ['color', 'background']
     },
     // {
     //     tag: 'div',
@@ -79,6 +80,7 @@ const addElement = (element) => {
     // $('#background').empty();
     // we are taking an object in and build an element on the screen inside the background element 
     console.log(element.tag)
+    
     // angle brackets with template literal inside
     // angle brackets set 
     const newElement = $(`<${element.tag}>`).text(element.content);
@@ -96,7 +98,7 @@ const addElement = (element) => {
     // loop over colorType
     // find what color types are and apply to each element
     // deciding if true or false
-    setColours(element, newElement);
+    setColors(element, newElement);
     // go to new function and give new element
     handleClick(element, newElement);
     
@@ -105,24 +107,52 @@ const addElement = (element) => {
     $('#background').append(newElement)
 }
 
-const setColours = (element, newElement) => {
+const setColors = (element, newElement) => {
     if(element.locked === false) {
-        element.colourType.forEach((type) => {
+        element.colorType.forEach((type) => {
             console.log(type);
             // .css gets property type and value that we want to add
             // method
             // return replaces function with the value
             // value is where function call used to be
-            newElement.css(type, getRandomColour)
+            newElement.css(type, getRandomColor)
         });
     } else{console.log('locked')}
 }
 
-const resetColour = () => {
+const resetColor = () => {
     $('#background').empty();
     setBackground()
     // get all the elements, loop through and reset colours
     myApp.elements.forEach(addElement);
+}
+
+const manualColor = (e) => {
+    // find form
+    // get form values
+    // apply values to elements
+    // let h1Background2 = document.getElementById("h1-colour")
+    // let value = h1Background2.value;
+    // Get hex value from input
+    // regex has # + six other colours for hex code value
+    let h1Color = $("#h1-color").val();
+    // apply hex value to corresponding element
+    $(".h1Color").css("color", h1Color);
+    
+    let formArray = $('form').serializeArray();
+    debugger;
+}
+
+const setColorsManual = (element, newElement) => {
+    // target each element by class (with jquery)
+    // use jquery to set element text-color/background
+}
+
+// make function similar to random function and pass the variable inside  
+
+const getRandomColor = () => {
+    // sending this and returning back from the place it was called from 
+    return '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
 }
 
 // events starts here
@@ -131,23 +161,24 @@ const handleClick = (element, newElement) => {
     newElement.on('click', () => {
         console.log(element)
         // whatever locked is make it opposite of that
+        // = !
+        debugger;
         element.locked = !element.locked;
         console.log(element)
     });
 } 
 
-const getRandomColour = () => {
-    // sending this and returning back from the place it was called from 
-    return '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
-}
-
 // random button click event
-// wheenevr clicked will reset colour
-$('.button-random').on('click', resetColour) 
+// whenever clicked will reset colour
+$('.button-random').on('click', resetColor) 
+
+// click event for submit, call manualColor
+$('.submit').on('click', manualColor) 
+
 
 // on click allow user to input HEX value
 
-
+// document ready where everything gets called
 // take the elements go over each element in array and do something with each object in array
 myApp.elements.forEach(function(element){
     // can call these separatly

@@ -32,6 +32,13 @@ div.background {
     min-height: 60vh; 
     min-width: 100%;
     border-radius: 5px;
+
+    h1 {
+        color: red;
+        font-size: 40px;
+        text-align: center;
+    }
+
 }
 
 .section-menu {
@@ -51,6 +58,9 @@ div.background {
     margin-bottom: 10px;
     border-radius: 5px;
     border-bottom: 3px solid $accentColor;
+    :focus {
+        
+    }
 }
 
 input.button-manual:hover  {
