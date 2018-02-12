@@ -5,6 +5,7 @@
 body {
     height: 50%;
     font-family: 'Lato', sans-serif;
+    font-weight: 400;
     background: white;
 }
 
@@ -14,31 +15,20 @@ body {
     margin: 0 auto;
 }
 
-span.app-title {
-    font-size: 20px;
-}
-
-p.app-description {
+// app description styles
+div.app-description {
     color: black;
     text-align: center;
-    width: 48.5%;
+    width: 53.5%;
     align-content: center;
     margin: 0 auto;
     margin-top: 30px;
     line-height: 25px;
-}
+    text-transform: capitalize;
 
-div.background {
-    min-height: 60vh; 
-    min-width: 100%;
-    border-radius: 5px;
-
-    h1 {
-        color: red;
-        font-size: 40px;
-        text-align: center;
+    span.app-title {
+        font-size: 20px;
     }
-
 }
 
 .section-menu {
@@ -48,8 +38,32 @@ div.background {
     margin-top: 30px;
 } 
 
-// buttons
-.button-random, .button-manual, .button-pair {
+// font awesome icon styles
+.fa-random, .fa-keyboard, .fa-paper-plane {
+    color: $accentColor;
+    margin-right: 15px;
+}
+
+// form styling
+form {
+    margin-top: 10px;
+    margin-bottom: -20px;
+}
+
+// input styling
+.enter-text {
+    margin-right: 10px;
+    border: 1px solid $accentColor;
+    width: 218px;
+    border-radius: 5px;
+}
+
+.enter-text:hover {
+    border: 1px solid $dark;
+}
+
+// button styles and animation
+.button-random-active, .button-manual-active, .button-submit-active {
     background: none;
     color:black;
     width: 150px;
@@ -58,33 +72,77 @@ div.background {
     margin-bottom: 10px;
     border-radius: 5px;
     border-bottom: 3px solid $accentColor;
-    :focus {
-        
-    }
+    transition: all 0.3s;
+    position: relative;
+    top: 0px;
+    cursor: pointer;
 }
 
-input.button-manual:hover  {
-    border: 1px solid $dark;
-    border-bottom: 3px solid $dark;
-}
-
-input.button-random:hover  {
-    border: 1px solid $dark;
-    border-bottom: 3px solid $dark;
-}
-
-input.button-pair {
-    width: 250px;
-    margin-top: 30px;
-}
-
-// .drop-down-menu {
-//     width: 200px;
-//     appearance: none;
-// }
-
-.button-random, .drop-down-menu {
+.button-random-active {
     margin-right: 10px;
 }
 
+// button active styles
+.button-manual-active:active {
+    top: 3px;
+}
 
+.button-random-active:active {
+    top: 3px;
+}
+
+.button-submit-active:active {
+    top: 3px;
+}
+
+// button hover styles
+.button-manual-active:hover  {
+    border: 1px solid $dark;
+    border-bottom: 3px solid $dark;
+}
+
+.button-random-active:hover  {
+    border: 1px solid $dark;
+    border-bottom: 3px solid $dark;
+}
+
+.button-submit-active:hover {
+    border: 1px solid $dark;
+    border-bottom: 3px solid $dark;
+}
+
+// background div sstyles
+div.background {
+    min-height: 60vh; 
+    min-width: 100%;
+    border-radius: 5px;
+
+    // h1 class name in javascript
+    .h1Color {
+        // color: red;
+        font-size: 40px;
+        text-align: center;
+        cursor: pointer;
+        font-family: 'Roboto', sans-serif;
+    }    
+}
+
+// paragraph class name in javascript
+.pColor {
+    font-size: 30px;
+    text-align: center; 
+    cursor: pointer;
+    font-family:'Roboto', sans-serif;
+}
+
+.bColor {
+    display: block;
+    margin: 0 auto;
+    background: none;
+    border: none;
+    width: 150px;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}

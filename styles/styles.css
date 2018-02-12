@@ -135,6 +135,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 body {
   height: 50%;
   font-family: 'Lato', sans-serif;
+  font-weight: 400;
   background: white; }
 
 .wrapper {
@@ -142,27 +143,18 @@ body {
   width: 90%;
   margin: 0 auto; }
 
-span.app-title {
-  font-size: 20px; }
-
-p.app-description {
+div.app-description {
   color: black;
   text-align: center;
-  width: 48.5%;
+  width: 53.5%;
   -ms-flex-line-pack: center;
   align-content: center;
   margin: 0 auto;
   margin-top: 30px;
-  line-height: 25px; }
-
-div.background {
-  min-height: 60vh;
-  min-width: 100%;
-  border-radius: 5px; }
-  div.background h1 {
-    color: red;
-    font-size: 40px;
-    text-align: center; }
+  line-height: 25px;
+  text-transform: capitalize; }
+  div.app-description span.app-title {
+    font-size: 20px; }
 
 .section-menu {
   text-align: center;
@@ -174,7 +166,24 @@ div.background {
   justify-content: center;
   margin-top: 30px; }
 
-.button-random, .button-manual, .button-pair {
+.fa-random, .fa-keyboard, .fa-paper-plane {
+  color: #aaa;
+  margin-right: 15px; }
+
+form {
+  margin-top: 10px;
+  margin-bottom: -20px; }
+
+.enter-text {
+  margin-right: 10px;
+  border: 1px solid #aaa;
+  width: 218px;
+  border-radius: 5px; }
+
+.enter-text:hover {
+  border: 1px solid #6a6a6a; }
+
+.button-random-active, .button-manual-active, .button-submit-active {
   background: none;
   color: black;
   width: 150px;
@@ -182,19 +191,61 @@ div.background {
   border: 1px solid #aaa;
   margin-bottom: 10px;
   border-radius: 5px;
-  border-bottom: 3px solid #aaa; }
+  border-bottom: 3px solid #aaa;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
+  top: 0px;
+  cursor: pointer; }
 
-input.button-manual:hover {
-  border: 1px solid #6a6a6a;
-  border-bottom: 3px solid #6a6a6a; }
-
-input.button-random:hover {
-  border: 1px solid #6a6a6a;
-  border-bottom: 3px solid #6a6a6a; }
-
-input.button-pair {
-  width: 250px;
-  margin-top: 30px; }
-
-.button-random, .drop-down-menu {
+.button-random-active {
   margin-right: 10px; }
+
+.button-manual-active:active {
+  top: 3px; }
+
+.button-random-active:active {
+  top: 3px; }
+
+.button-submit-active:active {
+  top: 3px; }
+
+.button-manual-active:hover {
+  border: 1px solid #6a6a6a;
+  border-bottom: 3px solid #6a6a6a; }
+
+.button-random-active:hover {
+  border: 1px solid #6a6a6a;
+  border-bottom: 3px solid #6a6a6a; }
+
+.button-submit-active:hover {
+  border: 1px solid #6a6a6a;
+  border-bottom: 3px solid #6a6a6a; }
+
+div.background {
+  min-height: 60vh;
+  min-width: 100%;
+  border-radius: 5px; }
+  div.background .h1Color {
+    font-size: 40px;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif; }
+
+.pColor {
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif; }
+
+.bColor {
+  display: block;
+  margin: 0 auto;
+  background: none;
+  border: none;
+  width: 150px;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif; }

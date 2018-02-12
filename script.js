@@ -21,66 +21,63 @@
 // global scope
 // empty object {}
 // main container
-// 
 const myApp = {};
 
 // do not need to preface with const 
 // array of elements in variable
+// each object represents element inside background
+// can easily add more objects to it
+// name of array in myApp is called elements
 myApp.elements = [
     { 
         tag: 'h1',
         classes: ['h1Color'],
         locked: false,
         color: '',
-        content: 'title',
+        content: 'Title',
         colorType: ['color']
     },
    {
         tag: 'p',
-        classes: [],
+        classes: ['pColor'],
         locked: false,
         color: '',
-        content: 'lorem ipsum',
+       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ',
         colorType: ['color']
     },
     {
         tag: 'button',
-        classes: [],
+        classes: ['bColor'],
         locked: false,
         color: '',
         content: 'button',
         colorType: ['color', 'background']
-    },
-    {
-        tag: 'i',
-        classes: ['fas', 'fa-bars'],
-        locked: false,
-        color: '',
-        content: '',
-        colorType: ['color', 'background']
-    },
+    }
     // {
-    //     tag: 'div',
-    //     classes: [],
+    //     tag: 'i',
+    //     classes: ['fas', 'fa-bars'],
     //     locked: false,
-    //     colour: '',
-    //     content: 'hello',
-    //     colourType: ['color', 'background']
-    // },
+    //     color: '',
+    //     content: '',
+    //     colorType: ['color']
+    // }
 ]
 
-// background colour changes to random HEX colour
+
+// FUNCTIONS START HERE
+// function that allows background colour to change to random HEX colour
 const setBackground = () => {
+    // jquery find div with class of .background inside my html and add style property to it using .css jquery method
+    // jquery change background-color to random HEX color code with following formula
     $('.background').css('background-color', '#' + (Math.random() * 0xFFFFFF << 0).toString(16));
 }
 
-// function is saved as variable 
+// function is saved as variable here that can be reused 
 const addElement = (element) => {
     // empty element
     // $('#background').empty();
-    // we are taking an object in and build an element on the screen inside the background element 
-    console.log(element.tag)
-    
+    // we are taking an object in and building an element on the screen inside the background element 
+    // console.log(element.tag)
     // angle brackets with template literal inside
     // angle brackets set 
     const newElement = $(`<${element.tag}>`).text(element.content);
@@ -107,17 +104,18 @@ const addElement = (element) => {
     $('#background').append(newElement)
 }
 
+// function for locking unlocking set colors on random
 const setColors = (element, newElement) => {
     if(element.locked === false) {
         element.colorType.forEach((type) => {
-            console.log(type);
+            // console.log(type);
             // .css gets property type and value that we want to add
             // method
             // return replaces function with the value
             // value is where function call used to be
             newElement.css(type, getRandomColor)
         });
-    } else{console.log('locked')}
+    } else{('locked')}
 }
 
 const resetColor = () => {
@@ -127,24 +125,39 @@ const resetColor = () => {
     myApp.elements.forEach(addElement);
 }
 
+// manual color function here
 const manualColor = (e) => {
     // find form
     // get form values
     // apply values to elements
-    // let h1Background2 = document.getElementById("h1-colour")
-    // let value = h1Background2.value;
     // Get hex value from input
     // regex has # + six other colours for hex code value
-    let h1Color = $("#h1-color").val();
-    // apply hex value to corresponding element
-    $(".h1Color").css("color", h1Color);
+
+    // apply values to elements
+    let h1Color = $('#h1-color').val();
+    // allow user to apply hex value to h1
+    $('.h1Color').css('color', h1Color);
+
+    // apply values to elements
+    let pColor = $('#paragraph-color').val();
+    // allow user to apply hex value to paragraph
+    $('.pColor').css('color', pColor);
+
+    // apply values to elements
+    let bColor = $('#button-color').val();
+    // allow user to apply hex value to button
+    $('.bColor').css('color', bColor);
     
     let formArray = $('form').serializeArray();
-    debugger;
+
+    // let regular expression be equal to hex color code that is length of 7 characters including #
+    let re = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+    re.exec();
 }
 
 const setColorsManual = (element, newElement) => {
     // target each element by class (with jquery)
+    
     // use jquery to set element text-color/background
 }
 
@@ -155,33 +168,32 @@ const getRandomColor = () => {
     return '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
 }
 
-// events starts here
-// 
+// EVENTS START HERE
 const handleClick = (element, newElement) => {
     newElement.on('click', () => {
-        console.log(element)
+        // console.log(element)
         // whatever locked is make it opposite of that
         // = !
-        debugger;
         element.locked = !element.locked;
-        console.log(element)
+        // console.log(element)
     });
 } 
 
 // random button click event
 // whenever clicked will reset colour
-$('.button-random').on('click', resetColor) 
+$('.button-random-active').on('click', resetColor) 
 
 // click event for submit, call manualColor
 $('.submit').on('click', manualColor) 
-
-
 // on click allow user to input HEX value
 
+
+
+// DOCUMENT READY
 // document ready where everything gets called
 // take the elements go over each element in array and do something with each object in array
 myApp.elements.forEach(function(element){
-    // can call these separatly
+    // can call these separately
     // set background on page load
     setBackground()
     addElement(element)

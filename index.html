@@ -6,38 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./styles/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-
     <title>MyWebApp</title>
 </head>
 <body>
     <!-- drop down menu -->
     <header class="wrapper">
-        <p class="app-description">
-             <span class="app-title">There are 16,777,216 possible HEX colour combinations.</span>  <span class="app-description">Mix them together and save your creation.</span>
-        </p>
+        <div class="app-description">
+             <span class="app-title">There are 16,777,216 possible hex colour code combinations.</span> <span class="app-about">Mix them together and save your creation.</span>
+        </div>
     </header>
     <main>
-        <!-- <form>
-            <select class="drop-down-menu">
-                <option value="background colour">Background Colour</option>
-                <option value="title colour">Title Colour</option>
-                <option value="paragraph colour">Paragraph Colour</option>
-                <option value="icon colour">Icon Colour</option>
-                <option value="button colour">Button Colour</option>
-            </select>
-        </form> -->
         <section class="section-menu">
             <div class="user-submit-buttons">
-                    <!-- white space between inputs -->
+                    <!-- there is white space between buttons and quick fix was to have no spaces between the HTML -->
+                    <!-- let me know what you suggest to do instead if there is another option -->
                     <!-- <form> -->
-                        <button class="button-random">Random</button>
-                        <button class="button-manual">Manual</button>
+                        <button class="button-random-active"><i class="fas fa-random"></i><span class="sr-only">random icon</span>Random</button><button class="button-manual-active"><i id="button-icon" class="fas fa-keyboard"></i><span class="sr-only">keyboard icon</span>Manual</button>
                     <!-- best practice to keep have inputs in a form -->
                     <form>
-                        <!-- I put inputs beside each other because there is a white space between them in the browser and the fix is to have the inputs on the same line -->
-                        <input id="h1-color" type="text" placeholder="Enter hex code for header" value=""><input id="paragraph-color" type="text" placeholder="Enter hex code for text" value=""><input id="button-color" type="text" placeholder="Enter hex code for header" value=""><input id="icon-color" type="text" placeholder="Enter hex code for header" value="">
-                        <button class="submit">Submit</button>
+                        <!-- I put inputs beside each other because there is a white space between them in the browser and a quick fix is to have the inputs on the same line -->
+                        <input id="background-color" class="enter-text" type="text" placeholder="Enter hex code for background" value="">
+                        <input id="h1-color" class="enter-text" type="text" placeholder="Enter hex code for title" value=""><input id="paragraph-color" class="enter-text" type="text" placeholder="Enter hex code for paragraph" value=""><input id="button-color"  class="enter-text" type="text" placeholder="Enter hex code for button" value="">
+                        <button class="button-submit-active"><i class="fas fa-paper-plane"></i><span class="sr-only">send icon</span>Submit</button>
                     </form>
             </div>
         </section>
@@ -45,11 +37,12 @@
         <section class="section-background wrapper">
             <div id="background" class="background"></div>
         </section>
+        <!-- add section in later -->
         <!-- save colour pairings options -->
-        <section class="section-save">
-            <input class="button-pair" type="submit" value="Save Your HEX Colour Pairing">
+        <!-- <section class="section-save">
+            <input class="button-pair" type="submit" value="Save Your HEX Colour Pairing"> -->
             <!-- <button class="save-colours">Save Colour Pairing</button> -->
-        </section>
+        <!-- </section> -->
     </main>
     <footer>
 
