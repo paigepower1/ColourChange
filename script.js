@@ -128,6 +128,7 @@ const resetColor = () => {
 // manual color function here
 const manualColor = (e) => {
     // find form
+    $('form')
     // get form values
     // apply values to elements
     // Get hex value from input
@@ -153,11 +154,13 @@ const manualColor = (e) => {
     // let regular expression be equal to hex color code that is length of 7 characters including #
     let re = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
     re.exec();
+
+    
 }
 
 const setColorsManual = (element, newElement) => {
     // target each element by class (with jquery)
-    
+
     // use jquery to set element text-color/background
 }
 
@@ -184,7 +187,7 @@ const handleClick = (element, newElement) => {
 $('.button-random-active').on('click', resetColor) 
 
 // click event for submit, call manualColor
-$('.submit').on('click', manualColor) 
+$('.button-submit-active').on('click', manualColor) 
 // on click allow user to input HEX value
 
 
